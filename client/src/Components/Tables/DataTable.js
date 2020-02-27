@@ -5,7 +5,7 @@ import ModalForm from '../Modals/Modal'
 class DataTable extends Component {
 
   deleteItem = id => {
-    let confirmDelete = window.confirm('Delete item forever?')
+    let confirmDelete = window.confirm('Удалить данные навсегда?')
     if(confirmDelete){
       fetch('http://localhost:8000/crud', {
       method: 'delete',
