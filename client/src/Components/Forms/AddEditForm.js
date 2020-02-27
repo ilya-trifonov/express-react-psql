@@ -18,7 +18,7 @@ class AddEditForm extends React.Component {
 
   submitFormAdd = e => {
     e.preventDefault()
-    fetch('http://localhost:3000/crud', {
+    fetch('http://localhost:8000/crud', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ class AddEditForm extends React.Component {
 
   submitFormEdit = e => {
     e.preventDefault()
-    fetch('http://localhost:3000/crud', {
+    fetch('http://localhost:8000/crud', {
       method: 'put',
       headers: {
         'Content-Type': 'application/json'
@@ -86,11 +86,11 @@ class AddEditForm extends React.Component {
     return (
       <Form onSubmit={this.props.item ? this.submitFormEdit : this.submitFormAdd}>
         <FormGroup>
-          <Label for="first">First Name</Label>
+          <Label for="first">Имя</Label>
           <Input type="text" name="first" id="first" onChange={this.onChange} value={this.state.first === null ? '' : this.state.first} />
         </FormGroup>
         <FormGroup>
-          <Label for="last">Last Name</Label>
+          <Label for="last">Фамилия</Label>
           <Input type="text" name="last" id="last" onChange={this.onChange} value={this.state.last === null ? '' : this.state.last}  />
         </FormGroup>
         <FormGroup>
@@ -98,18 +98,18 @@ class AddEditForm extends React.Component {
           <Input type="email" name="email" id="email" onChange={this.onChange} value={this.state.email === null ? '' : this.state.email}  />
         </FormGroup>
         <FormGroup>
-          <Label for="phone">Phone</Label>
-          <Input type="text" name="phone" id="phone" onChange={this.onChange} value={this.state.phone === null ? '' : this.state.phone}  placeholder="ex. 555-555-5555" />
+          <Label for="phone">Телефон</Label>
+          <Input type="text" name="phone" id="phone" onChange={this.onChange} value={this.state.phone === null ? '' : this.state.phone}  placeholder="+7 (555) 555-55-55" />
         </FormGroup>
         <FormGroup>
-          <Label for="location">Location</Label>
-          <Input type="text" name="location" id="location" onChange={this.onChange} value={this.state.location === null ? '' : this.state.location}  placeholder="City, State" />
+          <Label for="location">Город</Label>
+          <Input type="text" name="location" id="location" onChange={this.onChange} value={this.state.location === null ? '' : this.state.location} />
         </FormGroup>
         <FormGroup>
-          <Label for="hobby">Hobby</Label>
+          <Label for="hobby">Заметка</Label>
           <Input type="text" name="hobby" id="hobby" onChange={this.onChange} value={this.state.hobby}  />
         </FormGroup>
-        <Button>Submit</Button>
+        <Button>Готово</Button>
       </Form>
     );
   }
