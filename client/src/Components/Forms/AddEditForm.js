@@ -75,7 +75,6 @@ class AddEditForm extends React.Component {
   }
 
   componentDidMount(){
-    // if item exists, populate the state with proper data
     if(this.props.item){
       const { id, first, last, email, phone, location, hobby } = this.props.item
       this.setState({ id, first, last, email, phone, location, hobby })
